@@ -24,10 +24,10 @@ class MyProjectClass {
 
 function main() {
   // create an instance of the class
-  //let myInstance = new MyProjectClass("value1", "value2");
+  let myInstance = new MyProjectClass("value1", "value2");
 
   // call a method on the instance
-  //myInstance.myMethod();
+  myInstance.myMethod();
 
   const fillers = {
   band: ["$size $animal", "$size $color $animal", "$size $color $object", "$animal in a $object", "$opinion $color $animal", "My $animal is a $occupation", "My $occupation is a $animal", "The $opinion Flying $animal", "$opinion $occupation"],
