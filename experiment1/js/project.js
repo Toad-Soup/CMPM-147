@@ -24,15 +24,12 @@ class MyProjectClass {
 
 function main() {
   // create an instance of the class
-  let myInstance = new MyProjectClass("value1", "value2");
+  //let myInstance = new MyProjectClass("value1", "value2");
 
   // call a method on the instance
-  myInstance.myMethod();
-}
+  //myInstance.myMethod();
 
-// let's get this party started - uncomment me
-main(){
-const fillers = {
+  const fillers = {
   band: ["$size $animal", "$size $color $animal", "$size $color $object", "$animal in a $object", "$opinion $color $animal", "My $animal is a $occupation", "My $occupation is a $animal", "The $opinion Flying $animal", "$opinion $occupation"],
   size: ["Massive", "Tiny", "Small", "Petite", "Giant", "Ginourmous", "Enourmous", "Itty Bitty", "Fun-Sized", "Gargantuan"],
   color: ["Red", "Orange", "Maroon", "Fuchsia", "Salmon", "Pale Yellow", "Khaki", "Burnt Sienna", "Artichoke Green", "Indigo", "Amethyst"],
@@ -88,5 +85,7 @@ function generate() {
 $("#clicker").click(generate);
 
 generate();
-
 }
+
+// let's get this party started - uncomment me
+main();
