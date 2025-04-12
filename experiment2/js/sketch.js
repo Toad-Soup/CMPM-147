@@ -1,6 +1,6 @@
-// sketch.js - purpose and description here
-// Author: Your Name
-// Date:
+// sketch.js - contains the code from glitch.com
+// Author: Torrey Spear
+// Date: 4/12/15
 
 // Here is how you might set up an OOP p5.js project
 // Note that p5.js looks for a file called sketch.js
@@ -60,17 +60,17 @@ function resizeScreen() {
 
 // setup() function is called once when the program starts
 function setup() {
-    /*
+    
   // place our canvas, making it fit our container
   canvasContainer = $("#canvas-container");
   let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
   canvas.parent("canvas-container");
   // resize canvas is the page is resized
-*/
+
 createCanvas(w, h);
   pixelDensity(1);
   mountains();
-  createButton("reimagine").mousePressed(() => redo())
+  //createButton("reimagine").mousePressed(() => redo())
   // create an instance of the class
   myInstance = new MyClass("VALUE1", "VALUE2");
 
@@ -234,6 +234,7 @@ function mountains(t = 0){
   
 }
 
+/*
 //the following code was from Prof Modes and Raven Cruz on the discord
 function redo(){
   clear();
@@ -243,7 +244,7 @@ function redo(){
   xOffset = 0;
   mountains();
 }
-
+*/
 // mousePressed() function is called once after every time a mouse button is pressed
 function mousePressed() {
     // code to run when mouse is pressed
