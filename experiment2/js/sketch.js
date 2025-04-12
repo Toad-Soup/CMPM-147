@@ -67,7 +67,6 @@ function setup() {
   canvas.parent("canvas-container");
   // resize canvas is the page is resized
 
-createCanvas(w, h);
   pixelDensity(1);
   mountains();
   //createButton("reimagine").mousePressed(() => redo())
@@ -88,7 +87,7 @@ function draw() {
     mountains(millis());
     lastUpdate = millis();
   }
-    /*
+    
   background(220);    
   // call a method on the instance
   myInstance.myMethod();
@@ -107,7 +106,7 @@ function draw() {
   textStyle(BOLD);
   textSize(140);
   text("p5*", centerHorz - 105, centerVert + 40);
-  */
+  
 }
 
 function mountains(t = 0){
