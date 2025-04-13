@@ -77,6 +77,7 @@ function setup() {
   canvas.parent("canvas-container");
   // resize canvas is the page is resized
 
+  document.getElementById("reimagine").addEventListener("click", redo);
   //createCanvas(width, height);
   pixelDensity(1);
   mountains();
@@ -92,13 +93,16 @@ function setup() {
 
 // draw() function is called repeatedly, it's the main animation loop
 function draw() {
+  /*
       //this is also professor Mode's code to move the clouds across the screen
   if (millis() - lastUpdate > updateTime * 1000) {
     xOffset = (width / TWO_PI) * sin(millis() * 0.00005 * driftSpeed);
     mountains(millis());
     lastUpdate = millis();
+    
   }
-
+  */
+ mountains();
 }
 
 function mountains(t = 0){
@@ -117,6 +121,7 @@ function mountains(t = 0){
   //clouds******************************************************
   //the following code section ending at updatePixels() is from
   //Prof Wes Modes, slightly altered by me for the color and transparent background
+  /*
   loadPixels();
   let level = 450;
   let scale = 0.09;
@@ -148,7 +153,7 @@ function mountains(t = 0){
     }
   }
   updatePixels();
-  
+  */
   
   let baseHeight = height * 0.7;
   
