@@ -24,8 +24,8 @@ const foregroundColor = "#010101";
 const moonColor = "#fff9e3";
 const cloudColor = "#efd7bf"
 
-const w = 600;
-const h = 400;
+//const w = 600;
+//const h = 400;
 
 //variables for Prof Mode's cloud generation
 //let skySeed = 0;
@@ -58,6 +58,16 @@ function resizeScreen() {
   // redrawCanvas(); // Redraw everything based on new size
 }
 
+//the following code was from Prof Modes and Raven Cruz on the discord
+function redo(){
+  clear();
+  
+  randSeed = random(0, 2556);
+  noiseSeed(randSeed);
+  xOffset = 0;
+  mountains();
+}
+
 // setup() function is called once when the program starts
 function setup() {
     
@@ -67,7 +77,7 @@ function setup() {
   canvas.parent("canvas-container");
   // resize canvas is the page is resized
 
-createCanvas(w, h);
+  //createCanvas(width, height);
   pixelDensity(1);
   mountains();
   //createButton("reimagine").mousePressed(() => redo())
@@ -84,30 +94,11 @@ createCanvas(w, h);
 function draw() {
       //this is also professor Mode's code to move the clouds across the screen
   if (millis() - lastUpdate > updateTime * 1000) {
-    xOffset = (w / TWO_PI) * sin(millis() * 0.00005 * driftSpeed);
+    xOffset = (width / TWO_PI) * sin(millis() * 0.00005 * driftSpeed);
     mountains(millis());
     lastUpdate = millis();
   }
-    /*
-  background(220);    
-  // call a method on the instance
-  myInstance.myMethod();
 
-  // Set up rotation for the rectangle
-  push(); // Save the current drawing context
-  translate(centerHorz, centerVert); // Move the origin to the rectangle's center
-  rotate(frameCount / 100.0); // Rotate by frameCount to animate the rotation
-  fill(234, 31, 81);
-  noStroke();
-  rect(-125, -125, 250, 250); // Draw the rectangle centered on the new origin
-  pop(); // Restore the original drawing context
-
-  // The text is not affected by the translate and rotate
-  fill(255);
-  textStyle(BOLD);
-  textSize(140);
-  text("p5*", centerHorz - 105, centerVert + 40);
-  */
 }
 
 function mountains(t = 0){
@@ -115,11 +106,12 @@ function mountains(t = 0){
   background(skyColor); // Sky blue
   
   //create the moon***********************************
+  //TODO MOVE THE LOCATION OF THE MOON UP
   push();
   translate(width/2, height*0.20);
   stroke(moonColor);
   fill(moonColor);
-  ellipse(-200, 100, 70, 70);
+  ellipse(-300, 45, 130, 130);
   pop();
   
   //clouds******************************************************
@@ -132,14 +124,14 @@ function mountains(t = 0){
   //let skyColor = [135, 190, 235];
   //let cloudColor = [255, 255, 255]; // only one cloud color
 
-  for (let y = 0; y < h; y++) {
-    let yParallaxFactor = map(y, 0, h, parallaxStrength, 0);
+  for (let y = 0; y < height; y++) {
+    let yParallaxFactor = map(y, 0, height, parallaxStrength, 0);
 
-    for (let x = 0; x < w; x++) {
-      let mod = map(y, 0, h, 10, 1);
+    for (let x = 0; x < width; x++) {
+      let mod = map(y, 0, height, 10, 1);
       //let squish = scale / mod;
 
-      let nx = ((x - w / 2) * scale / mod) + (xOffset * yParallaxFactor * scale);
+      let nx = ((x - width / 2) * scale / mod) + (xOffset * yParallaxFactor * scale);
       let ny = (y * scale / mod);
 
       let c = level * noise(nx, ny, t * timeScale);
@@ -234,17 +226,7 @@ function mountains(t = 0){
   
 }
 
-/*
-//the following code was from Prof Modes and Raven Cruz on the discord
-function redo(){
-  clear();
-  
-  randSeed = random(0, 2556);
-  noiseSeed(randSeed);
-  xOffset = 0;
-  mountains();
-}
-*/
+
 // mousePressed() function is called once after every time a mouse button is pressed
 function mousePressed() {
     // code to run when mouse is pressed
